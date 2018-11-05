@@ -13,8 +13,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Imaplement implements Interface {
-    
-    
+
     private static int score = 100;
     private static final String arr[][] = {{"0", "1", "2", "3"}, {"4", "5", "6", "7"}, {"8", "9", "10", "11"}, {"12", "13", "14", "15"}};
     private static final String arrr[][] = {{"0", "1", "2", "3"}, {"4", "5", "6", "7"}, {"8", "9", "10", "11"}, {"12", "13", "14", "15"}};
@@ -57,13 +56,8 @@ public class Imaplement implements Interface {
     public void MovementOfUser() {
 
         while (true) {
-
-            if (score <= 0) {
-                System.out.println();
-                System.out.println("\t\t\t\t\t\t\t You Lost Your Moves");
-                System.exit(0);
-            }
-
+            
+            checkScrore();
             if (arr[0][0].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -124,6 +118,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[1][0].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -194,6 +189,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[0][1].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -264,6 +260,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[1][1].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -341,6 +338,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[2][1].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -417,6 +415,8 @@ public class Imaplement implements Interface {
                         break;
                 }
             }
+            
+            checkScrore();
             if (arr[3][1].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -485,6 +485,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[0][2].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -553,6 +554,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[1][2].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -631,6 +633,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[2][2].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -709,6 +712,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[3][2].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -777,6 +781,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[0][3].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -836,6 +841,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[1][3].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -904,6 +910,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[2][3].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -973,6 +980,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[3][3].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -1033,6 +1041,7 @@ public class Imaplement implements Interface {
 
             }
 
+            checkScrore();
             if (arr[2][0].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -1101,6 +1110,7 @@ public class Imaplement implements Interface {
                 }
             }
 
+            checkScrore();
             if (arr[3][0].equals("USER")) {
                 playAlertForWumPus();
                 playAlertForPIt();
@@ -1166,6 +1176,7 @@ public class Imaplement implements Interface {
 
     @Override
     public void AssignAllObjects() {
+        clearScreenFromSpacess();
         printArray();
         System.out.print("Enter A Position Of USER : ");
         x = sc.nextInt();
@@ -2446,6 +2457,14 @@ public class Imaplement implements Interface {
     public void clearScreenFromSpacess() {
         for (int i = 0; i <= 35; i++) {
             System.out.println();
+        }
+    }
+
+    public void checkScrore() {
+        if (score <= 0) {
+            System.out.println();
+            System.out.println("\t\t\t\t\t\t\t You Lost Your Moves");
+            System.exit(0);
         }
     }
 
